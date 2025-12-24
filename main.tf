@@ -239,41 +239,40 @@ resource "aws_launch_template" "app_lt" {
               systemctl start httpd
               systemctl enable mariadb
               systemctl start mariadb
-
-              cat > /usr/share/nginx/html/index.html <<HTML
-                <!DOCTYPE html>
-                <html lang="en">
-                <head>
-                  <meta charset="UTF-8">
-                  <title>Welcome Card</title>
-                  <style>
-                    body {
-                      display: flex;
-                      justify-content: center;
-                      align-items: center;
-                      height: 100vh;
-                      background-color: #f0f8ff;
-                      font-family: Arial, sans-serif;
-                    }
-                    .card {
-                      background-color: #fff8dc;
-                      padding: 30px 50px;
-                      border-radius: 20px;
-                      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-                      text-align: center;
-                      font-size: 1.5rem;
-                    }
-                  </style>
-                </head>
-                <body>
-                  <div class="card">
-                    <h1>🏠 Welcome to my home! I am 100% Infrastructure as Code (IaC), deployed using Terraform.  
-                    My friend from the neighboring AZ was created the same way! 🚀💻 HHHH!!!</h1>
-                  </div>
-                </body>
-                </html>
-                HTML
-                EOF
+              cat > /var/www/html/index.html <<'HTML'
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                      <meta charset="UTF-8">
+                      <title>Welcome Card</title>
+                      <style>
+                        body {
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          height: 100vh;
+                          background-color: #f0f8ff;
+                          font-family: Arial, sans-serif;
+                        }
+                        .card {
+                          background-color: #fff8dc;
+                          padding: 30px 50px;
+                          border-radius: 20px;
+                          box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                          text-align: center;
+                          font-size: 1.5rem;
+                        }
+                      </style>
+                    </head>
+                    <body>
+                      <div class="card">
+                        <h1>🏠 Welcome to my home! I am 100% Infrastructure as Code (IaC), deployed using Terraform.
+                        My friend from the neighboring AZ was created the same way! 🚀💻 HHHH!!!</h1>
+                      </div>
+                    </body>
+                    </html>
+                    HTML
+                    EOF
 
               )
 
