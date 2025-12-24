@@ -7,6 +7,10 @@ The infrastructure is fully automated and reproducible using Infrastructure as C
 # Architecture Summary
 ![Example Image](terraform%201.png)
 
+![Example Image](terraform%202.png)
+
+![Example Image](terraform%203.png)
+
 The deployed architecture includes:
 
 1 **VPC** with **DNS** support enabled
